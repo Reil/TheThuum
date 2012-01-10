@@ -24,8 +24,8 @@ public class FusRoDah implements Shout {
 		
 		// Do the blasting
 		Vector blastVector = new Vector();
-		blastVector.copy(heading).normalize().setY(0);
-		blastVector.multiply(fusHoriStrength[level-1]).add(new Vector(0,fusVertStrength[level-1],0));
+		blastVector.copy(heading).setY(0).normalize();
+		blastVector.multiply(fusHoriStrength[level-1]).setY(fusVertStrength[level-1]);
 		for(Entity victim : Shared.getAreaOfEffect(dragonBorn, 4, distance)){
 			victim.setVelocity(victim.getVelocity().add(blastVector));  // Toss'em in the direction the dragonborn's looking at!
 		}
