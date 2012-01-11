@@ -2,6 +2,7 @@ cooldown:
     universal: true
     alert message: It's been too soon since your last shout!
     ready message: Your Thu'um is ready.
+    persistence: 100
 shouts:
     fusrodah:
         - 15

@@ -87,7 +87,8 @@ public class GreyBeard extends PlayerListener{
 	
 	@Override
 	public void onPlayerQuit(PlayerQuitEvent event){
-		onCooldown.remove(event.getPlayer());
+		int persistence = Plugin.thisOne.getConfig().getInt("cooldown.persistence");
+		Plugin.scheduler.scheduleSyncDelayedTask(Plugin.thisOne, new ClearCooldowns(event.getPlayer()), persistence * 20);
 	}
 	
 	// If not already on cooldown, puts this shout on cooldown and returns true
@@ -101,17 +102,16 @@ public class GreyBeard extends PlayerListener{
 		if (onCooldown.get(dovahkiin).contains(shout)) return false;
 
 		onCooldown.get(dovahkiin).add(shout);
-		cooldown task = new cooldown(dovahkiin, shout);
+		Cooldown task = new Cooldown(dovahkiin, shout);
 		Plugin.scheduler.scheduleSyncDelayedTask(Plugin.thisOne, task,cooldownDuration);
 		return true;
 	}
-	
-	
-	public class cooldown implements Runnable{
+		
+	public class Cooldown implements Runnable{
 		Player dovahkiin;
 		ShoutType shout;
 		
-		public cooldown(Player player, ShoutType shoutType){
+		public Cooldown(Player player, ShoutType shoutType){
 			dovahkiin = player;
 			shout = shoutType;
 		}
@@ -121,6 +121,19 @@ public class GreyBeard extends PlayerListener{
 			if (!onCooldown.containsKey(dovahkiin)) return;
 			onCooldown.get(dovahkiin).remove(shout);
 			dovahkiin.sendMessage(Plugin.thisOne.getConfig().getString("cooldown.ready message"));
+		}
+	}
+	
+	public class ClearCooldowns implements Runnable {
+		Player dovahkiin;
+		
+		public ClearCooldowns (Player player){
+			dovahkiin = player;
+		}
+		
+		@Override
+		public void run() {
+			if (!dovahkiin.isOnline()) onCooldown.remove(dovahkiin);
 		}
 	}
 }
