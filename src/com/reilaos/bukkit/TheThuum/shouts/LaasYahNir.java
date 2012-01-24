@@ -33,7 +33,7 @@ public class LaasYahNir implements Shout {
 				entities.remove(test);
 			}
 		}
-		glowing.addAll(new HashSet<Entity>(entities), 200*level);
+		glowing.addAll(entities, 200*level);
 		return;
 	}
 	

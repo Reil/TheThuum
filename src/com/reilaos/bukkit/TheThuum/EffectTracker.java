@@ -15,6 +15,7 @@
 
 package com.reilaos.bukkit.TheThuum;
 
+import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Set;
 
@@ -46,7 +47,6 @@ public class EffectTracker extends Hashtable<Entity, EffectTracker.EffectCooldow
 		}
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
 			if(containsKey(target) && get(target) == this){
 				remove(target);
 			}
@@ -54,14 +54,13 @@ public class EffectTracker extends Hashtable<Entity, EffectTracker.EffectCooldow
 	}
 	
 	public class EffectCooldownSet extends EffectCooldown {
-		Set<Entity> targets;
-		public EffectCooldownSet (Set<Entity> effectsThese){
+		Collection<Entity> targets;
+		public EffectCooldownSet (Collection<Entity> effectsThese){
 			super(null);
 			targets = effectsThese;
 		}
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
 			for(Entity target : targets){
 				if(containsKey(target) && get(target) == this){
 					remove(target);
