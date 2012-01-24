@@ -29,6 +29,8 @@ public class Plugin extends JavaPlugin{
 		pm.registerEvent(Event.Type.PLAYER_CHAT, arngeir, Priority.Monitor, this);
 		pm.registerEvent(Event.Type.PLAYER_QUIT, arngeir, Priority.Monitor, this);
 		pm.registerEvent(Event.Type.ENTITY_TARGET, (EntityListener) ShoutType.KAANDREMOV.callMe, Priority.Monitor, this);
+		pm.registerEvent(Event.Type.ENTITY_DAMAGE, (EntityListener) ShoutType.FEIMZIIGRON.callMe, Priority.Monitor, this);
+		pm.registerEvent(Event.Type.FOOD_LEVEL_CHANGE, (EntityListener) ShoutType.FEIMZIIGRON.callMe, Priority.Monitor, this);
 		log.info("The Thu'um" + getDescription().getVersion() + "loaded!");
 	}
 	@Override

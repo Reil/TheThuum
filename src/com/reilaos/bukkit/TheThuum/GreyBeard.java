@@ -30,7 +30,8 @@ public class GreyBeard extends PlayerListener{
 		YOLTOORSHUL   ("yol",  "toor", "shul", new YolToorShul()),
 		LOKVAHKOOR    ("lok",  "vah",  "koor", new LokVahKoor()),
 		KAANDREMOV    ("kaan", "drem", "ov",   new KaanDremOv()),
-		WULDNAHKEST   ("wuld", "nah",  "kest", new WuldNahKest());
+		WULDNAHKEST   ("wuld", "nah",  "kest", new WuldNahKest()),
+		FEIMZIIGRON   ("feim", "zii",  "gron", new FeimZiiGron());
 		
 		public final String[] words;
 		public Shout callMe;
