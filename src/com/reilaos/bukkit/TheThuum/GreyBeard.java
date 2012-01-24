@@ -18,28 +18,7 @@ import com.reilaos.bukkit.TheThuum.shouts.*;
 
 public class GreyBeard extends PlayerListener{
 	
-	/**
-	 * Shout parsing/handling stuff
-	 */
-	// To add a shout, put it into this enum.
-	// Also, put default cooldowns in the config.yml
-	// DON'T TOUCH ANYTHING ELSE IF ALL YOU'RE DOING
-	// IS ADDING A SHOUT.
-	enum ShoutType{
-		FUSRODAH      (new FusRoDah()),
-		YOLTOORSHUL   (new YolToorShul()),
-		LOKVAHKOOR    (new LokVahKoor()),
-		KAANDREMOV    (new KaanDremOv()),
-		WULDNAHKEST   (new WuldNahKest()),
-		FEIMZIIGRON   (new FeimZiiGron());
-		
-		public Shout shout;
-		private ShoutType(Shout shout){
-			this.shout = shout;
-		}
-	}
-	
-	// Parses chat to see if it's a shout based off data in the shoutHandler class.  Determines level of the shout.
+	// Parses chat to see if it's a shout.  Determines level of the shout.
 	// Does parsing only.  Permissions and the like are handled by shout()
 	@Override
 	public void onPlayerChat(PlayerChatEvent event) {		
