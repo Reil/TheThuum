@@ -12,6 +12,10 @@ import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
+
+/**
+ * Become Ethereal 
+ */
 public class FeimZiiGron extends EntityListener implements Shout {
 	@Override
 	public String[] words(){
@@ -24,7 +28,6 @@ public class FeimZiiGron extends EntityListener implements Shout {
 	@Override
 	public void shout(Player dovahkiin, int level) {
 		invincible.add(dovahkiin, duration[level - 1] * 20);
-		dovahkiin.playEffect(EntityEffect.WOLF_HEARTS);
 		
 		FeimZiiGronGlow task = new FeimZiiGronGlow(dovahkiin);
 		task.id = Plugin.scheduler.scheduleSyncRepeatingTask(Plugin.thisOne, task, 0, 10);

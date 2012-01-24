@@ -14,6 +14,9 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 import com.reilaos.bukkit.TheThuum.delays.RemoveEntity;
 
+/**
+ * Fire Breath
+ */
 public class YolToorShul implements Shout {
 	@Override
 	public String[] words(){
@@ -42,7 +45,7 @@ public class YolToorShul implements Shout {
 		Lateral.add(new Vector().zero().subtract(LateralTop));
 		Lateral.add(LateralSide);
 		// This nested for-loop:
-		// Level 2: Makes diagonals fro
+		// Level 2: Makes diagonals
 		// Level 3: Makes diagonals and makes an outer circle.
 		for (int i = level - 1; i > 0; i--) {
 			LinkedList<Vector> newLateral = new LinkedList<Vector>();

@@ -12,6 +12,9 @@ import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
+/**
+ * Aura Whisper
+ */
 public class LaasYahNir implements Shout {
 	@Override
 	public String[] words() {

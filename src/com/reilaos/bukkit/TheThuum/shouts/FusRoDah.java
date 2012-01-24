@@ -14,6 +14,9 @@ import com.reilaos.bukkit.TheThuum.Shared;
 import com.reilaos.bukkit.TheThuum.Shout;
 import com.reilaos.bukkit.TheThuum.delays.Explosion;
 
+/**
+ * Unrelenting Force
+ */
 public class FusRoDah implements Shout {
 	@Override
 	public String[] words(){

@@ -6,6 +6,9 @@ import org.bukkit.util.Vector;
 import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
+/**
+ * Whirlwind Sprint
+ */
 public class WuldNahKest implements Shout{
 	@Override
 	public String[] words(){

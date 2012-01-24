@@ -28,13 +28,23 @@ public class EffectTracker extends Hashtable<Entity, EffectTracker.EffectCooldow
 	 */
 	private static final long serialVersionUID = -6363176253052499818L;
 	
+	/**
+	 * 
+	 * @param effectsThis The entity you want to put into the set.
+	 * @param duration  Time you want it to remain in the set.  In server ticks, not seconds.
+	 */
 	public void add (Entity effectsThis, int duration){
 		EffectCooldown cooldown = new EffectCooldown(effectsThis);
 		Plugin.scheduler.scheduleSyncDelayedTask(Plugin.thisOne, cooldown, duration);
 		put(effectsThis, cooldown);
 	}
 	
-	public void addAll(Set<Entity> effectsThese, int duration){
+	/**
+	 * If you have more than 1 thing to add with the same duration, use this instead of using add a whole bunch.  It spins off fewer tasks.
+	 * @param effectsThese Set of entities that you want added to the set.
+	 * @param duration Time you want them to remain in the set.  In server ticks, not seconds.
+	 */
+	public void addAll(Collection<Entity> effectsThese, int duration){
 		EffectCooldown cooldown = new EffectCooldownSet(effectsThese);
 		Plugin.scheduler.scheduleSyncDelayedTask(Plugin.thisOne, cooldown, duration);
 		for (Entity effectsThis : effectsThese)	put(effectsThis, cooldown);

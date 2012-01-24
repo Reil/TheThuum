@@ -9,7 +9,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import com.reilaos.bukkit.TheThuum.GreyBeard.ShoutType;
 
 public class Plugin extends JavaPlugin{
 	GreyBeard arngeir;
@@ -28,11 +27,12 @@ public class Plugin extends JavaPlugin{
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvent(Event.Type.PLAYER_CHAT, arngeir, Priority.Monitor, this);
 		pm.registerEvent(Event.Type.PLAYER_QUIT, arngeir, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.ENTITY_TARGET, (EntityListener) ShoutType.KAANDREMOV.callMe, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.ENTITY_DAMAGE, (EntityListener) ShoutType.FEIMZIIGRON.callMe, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.FOOD_LEVEL_CHANGE, (EntityListener) ShoutType.FEIMZIIGRON.callMe, Priority.Monitor, this);
+		pm.registerEvent(Event.Type.ENTITY_TARGET, (EntityListener) ShoutType.KAANDREMOV.shout, Priority.Monitor, this);
+		pm.registerEvent(Event.Type.ENTITY_DAMAGE, (EntityListener) ShoutType.FEIMZIIGRON.shout, Priority.Monitor, this);
+		pm.registerEvent(Event.Type.FOOD_LEVEL_CHANGE, (EntityListener) ShoutType.FEIMZIIGRON.shout, Priority.Monitor, this);
 		log.info("The Thu'um" + getDescription().getVersion() + "loaded!");
 	}
+	
 	@Override
 	public void onDisable() {
 		// TODO Auto-generated method stub

@@ -6,6 +6,10 @@ import org.bukkit.entity.Player;
 import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
+
+/**
+ * Clear Skies
+ */
 public class LokVahKoor implements Shout {
 	@Override
 	public String[] words(){

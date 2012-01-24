@@ -1,0 +1,4 @@
+To add a new shout:
+1) Create a class in the package com.reilaos.bukkit.TheThuum.shouts which implements the class com.reilaos.bukkit.TheThuum.Shout
+2) Add that shout to the enum com.reilaos.bukkit.TheThuum.ShoutType
+3) Add the default cooldowns for that shout to config.yml

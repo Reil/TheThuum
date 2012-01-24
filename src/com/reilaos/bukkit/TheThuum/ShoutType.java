@@ -9,13 +9,8 @@ import com.reilaos.bukkit.TheThuum.shouts.WuldNahKest;
 import com.reilaos.bukkit.TheThuum.shouts.YolToorShul;
 
 /**
- * Shout parsing/handling stuff
+ * List of shouts
  */
-// To add a shout to the plugin:
-// 1) Put it into this enum.
-// 2) Put default cooldowns in the config.yml
-// DON'T TOUCH ANYTHING ELSE IF ALL YOU'RE DOING
-// IS ADDING A SHOUT.
 enum ShoutType{
 	FUSRODAH      (new FusRoDah()),
 	YOLTOORSHUL   (new YolToorShul()),

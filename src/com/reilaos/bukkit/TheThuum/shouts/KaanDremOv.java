@@ -13,6 +13,9 @@ import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Shared;
 import com.reilaos.bukkit.TheThuum.Shout;
 
+/**
+ * Kyne's Peace
+ */
 public class KaanDremOv extends EntityListener implements Shout{
 	@Override
 	public String[] words(){
