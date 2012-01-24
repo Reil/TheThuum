@@ -13,10 +13,7 @@ import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerListener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import com.reilaos.bukkit.TheThuum.shouts.FusRoDah;
-import com.reilaos.bukkit.TheThuum.shouts.KaanDremOv;
-import com.reilaos.bukkit.TheThuum.shouts.LokVahKoor;
-import com.reilaos.bukkit.TheThuum.shouts.YolToorShul;
+import com.reilaos.bukkit.TheThuum.shouts.*;
 
 
 public class GreyBeard extends PlayerListener{
@@ -32,7 +29,8 @@ public class GreyBeard extends PlayerListener{
 		FUSRODAH      ("fus",  "ro",   "dah",  new FusRoDah()),
 		YOLTOORSHUL   ("yol",  "toor", "shul", new YolToorShul()),
 		LOKVAHKOOR    ("lok",  "vah",  "koor", new LokVahKoor()),
-		KAANDREMOV    ("kaan", "drem", "ov",   new KaanDremOv());
+		KAANDREMOV    ("kaan", "drem", "ov",   new KaanDremOv()),
+		WULDNAHKEST   ("wuld", "nah",  "kest", new WuldNahKest());
 		
 		public final String[] words;
 		public Shout callMe;
