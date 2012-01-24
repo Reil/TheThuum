@@ -7,6 +7,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
 public class WuldNahKest implements Shout{
+	@Override
+	public String[] words(){
+		return new String[] {"wuld", "nah", "kest"};
+	}
+	
 	static final double multiplier[] = {5.5, 5.8, 6.6};
 	@Override
 	public void shout(Player dovahkiin, int level) {

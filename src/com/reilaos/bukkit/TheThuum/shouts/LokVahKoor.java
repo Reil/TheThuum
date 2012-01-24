@@ -7,7 +7,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
 public class LokVahKoor implements Shout {
-
+	@Override
+	public String[] words(){
+		return new String[] {"lok", "vah", "koor"};
+	}
+	
 	@Override
 	public void shout(Player dovahkiin, int level) {
 		World world = dovahkiin.getWorld();

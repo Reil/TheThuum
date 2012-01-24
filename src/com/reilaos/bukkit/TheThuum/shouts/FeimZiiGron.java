@@ -13,6 +13,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shout;
 
 public class FeimZiiGron extends EntityListener implements Shout {
+	@Override
+	public String[] words(){
+		return new String[] {"feim", "zii", "gron"};
+	}
+	
 	EffectTracker invincible = new EffectTracker();
 	final int duration [] = {8, 13, 18};
 	

@@ -26,18 +26,16 @@ public class GreyBeard extends PlayerListener{
 	// DON'T TOUCH ANYTHING ELSE IF ALL YOU'RE DOING
 	// IS ADDING A SHOUT.
 	enum ShoutType{
-		FUSRODAH      ("fus",  "ro",   "dah",  new FusRoDah()),
-		YOLTOORSHUL   ("yol",  "toor", "shul", new YolToorShul()),
-		LOKVAHKOOR    ("lok",  "vah",  "koor", new LokVahKoor()),
-		KAANDREMOV    ("kaan", "drem", "ov",   new KaanDremOv()),
-		WULDNAHKEST   ("wuld", "nah",  "kest", new WuldNahKest()),
-		FEIMZIIGRON   ("feim", "zii",  "gron", new FeimZiiGron());
+		FUSRODAH      (new FusRoDah()),
+		YOLTOORSHUL   (new YolToorShul()),
+		LOKVAHKOOR    (new LokVahKoor()),
+		KAANDREMOV    (new KaanDremOv()),
+		WULDNAHKEST   (new WuldNahKest()),
+		FEIMZIIGRON   (new FeimZiiGron());
 		
-		public final String[] words;
-		public Shout callMe;
-		private ShoutType(String one, String two, String three, Shout shoutFunction){
-			words = new String[]{one, two, three};
-			callMe = shoutFunction;
+		public Shout shout;
+		private ShoutType(Shout shout){
+			this.shout = shout;
 		}
 	}
 	
@@ -50,12 +48,12 @@ public class GreyBeard extends PlayerListener{
 		
 		if (length == 4) return;  // There are no 4-word shouts.
 		
-		shouting: for (ShoutType shout : ShoutType.values()){
+		shouting: for (ShoutType shoutType : ShoutType.values()){
 			int power;
 			for(power = 0; power < length; power++){
-				if(!message[power].equalsIgnoreCase(shout.words[power])) continue shouting;
+				if(!message[power].equalsIgnoreCase(shoutType.shout.words()[power])) continue shouting;
 			}
-			shout(event.getPlayer(), shout, power);
+			shout(event.getPlayer(), shoutType, power);
 			return;
 		}
 	}
@@ -72,7 +70,7 @@ public class GreyBeard extends PlayerListener{
 				return;
 			}
 		}
-		 word.callMe.shout(dragonBorn, level);
+		 word.shout.shout(dragonBorn, level);
 	}
 	
 	

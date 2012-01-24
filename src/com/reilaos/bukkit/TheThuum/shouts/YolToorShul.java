@@ -16,6 +16,11 @@ import com.reilaos.bukkit.TheThuum.delays.RemoveEntity;
 
 public class YolToorShul implements Shout {
 	@Override
+	public String[] words(){
+		return new String[] {"yol", "toor", "shul"};
+	}
+	
+	@Override
 	public void shout(Player dovahkiin, int level) {
 		if(level > 3 || level < 0) return;
 		

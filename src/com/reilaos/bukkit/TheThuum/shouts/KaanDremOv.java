@@ -14,6 +14,11 @@ import com.reilaos.bukkit.TheThuum.Shared;
 import com.reilaos.bukkit.TheThuum.Shout;
 
 public class KaanDremOv extends EntityListener implements Shout{
+	@Override
+	public String[] words(){
+		return new String[] {"kaan", "drem", "ov"};
+	}
+	
 	EffectTracker peaced = new EffectTracker();
 	@Override
 	public void shout(Player dovahkiin, int level){

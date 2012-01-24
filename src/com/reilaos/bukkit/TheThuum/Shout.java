@@ -4,4 +4,5 @@ import org.bukkit.entity.Player;
 
 public interface Shout {
 	public void shout(Player dovahkiin, int level);
+	public String[] words();
 }

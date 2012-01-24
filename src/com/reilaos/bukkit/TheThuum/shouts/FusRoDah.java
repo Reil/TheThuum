@@ -15,6 +15,12 @@ import com.reilaos.bukkit.TheThuum.Shout;
 import com.reilaos.bukkit.TheThuum.delays.Explosion;
 
 public class FusRoDah implements Shout {
+	@Override
+	public String[] words(){
+		return new String[] {"fus", "ro", "dah"};
+	}
+	
+	
 	final double fusHoriStrength[] = {.5,2,7};
 	final double fusVertStrength[] = {.5,.7,1.5};
 	@Override
