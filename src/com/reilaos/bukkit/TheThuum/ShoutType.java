@@ -3,7 +3,7 @@ package com.reilaos.bukkit.TheThuum;
 import com.reilaos.bukkit.TheThuum.shouts.FeimZiiGron;
 import com.reilaos.bukkit.TheThuum.shouts.FusRoDah;
 import com.reilaos.bukkit.TheThuum.shouts.KaanDremOv;
-import com.reilaos.bukkit.TheThuum.shouts.LasYahNir;
+import com.reilaos.bukkit.TheThuum.shouts.LaasYahNir;
 import com.reilaos.bukkit.TheThuum.shouts.LokVahKoor;
 import com.reilaos.bukkit.TheThuum.shouts.WuldNahKest;
 import com.reilaos.bukkit.TheThuum.shouts.YolToorShul;
@@ -22,7 +22,8 @@ enum ShoutType{
 	LOKVAHKOOR    (new LokVahKoor()),
 	KAANDREMOV    (new KaanDremOv()),
 	WULDNAHKEST   (new WuldNahKest()),
-	FEIMZIIGRON   (new FeimZiiGron());
+	FEIMZIIGRON   (new FeimZiiGron()),
+	LAASYAHNIR    (new LaasYahNir());
 	
 	public Shout shout;
 	private ShoutType(Shout shout){
