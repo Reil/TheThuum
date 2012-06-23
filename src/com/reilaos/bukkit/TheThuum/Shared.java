@@ -40,11 +40,11 @@ public class Shared {
 		String[] segments = permission.split("\\.");
 		
 		if (dovahkiin.hasPermission("*")) return true;
-		for(int i = 0; i < segments.length - 1; i++){
-			builder.append(segments[i] + ".");
+		if (dovahkiin.hasPermission(permission)) return true;
+		for(String segment: segments){
+			builder.append(segment + ".");
 			if(dovahkiin.hasPermission(builder.toString() + "*")) return true;
 		}
-		if(dovahkiin.hasPermission(permission)) return true;
 		
 		return false;
 	}

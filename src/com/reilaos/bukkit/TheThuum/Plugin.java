@@ -2,12 +2,12 @@ package com.reilaos.bukkit.TheThuum;
 
 import java.util.logging.Logger;
 
-import org.bukkit.event.Event;
-import org.bukkit.event.Event.Priority;
-import org.bukkit.event.entity.EntityListener;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
+
+import com.reilaos.bukkit.TheThuum.shouts.ShoutType;
 
 
 public class Plugin extends JavaPlugin{
@@ -25,11 +25,13 @@ public class Plugin extends JavaPlugin{
 		scheduler = getServer().getScheduler();
 		log = Logger.getLogger("Minecraft");
 		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvent(Event.Type.PLAYER_CHAT, arngeir, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.PLAYER_QUIT, arngeir, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.ENTITY_TARGET, (EntityListener) ShoutType.KAANDREMOV.shout, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.ENTITY_DAMAGE, (EntityListener) ShoutType.FEIMZIIGRON.shout, Priority.Monitor, this);
-		pm.registerEvent(Event.Type.FOOD_LEVEL_CHANGE, (EntityListener) ShoutType.FEIMZIIGRON.shout, Priority.Monitor, this);
+		
+		pm.registerEvents(arngeir,this);
+		for(ShoutType blah:ShoutType.values()){
+			if (blah.shout instanceof Listener){
+				pm.registerEvents((Listener) blah.shout, this);
+			}
+		}
 		log.info("The Thu'um" + getDescription().getVersion() + "loaded!");
 	}
 	

@@ -11,7 +11,6 @@ import org.bukkit.util.Vector;
 
 import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.Shared;
-import com.reilaos.bukkit.TheThuum.Shout;
 import com.reilaos.bukkit.TheThuum.delays.Explosion;
 
 /**

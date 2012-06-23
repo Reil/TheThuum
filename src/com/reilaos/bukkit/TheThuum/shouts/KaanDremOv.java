@@ -6,17 +6,17 @@ import java.util.Set;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.entity.EntityListener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetEvent;
 
 import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Shared;
-import com.reilaos.bukkit.TheThuum.Shout;
 
 /**
  * Kyne's Peace
  */
-public class KaanDremOv extends EntityListener implements Shout{
+public class KaanDremOv implements Shout,Listener{
 	@Override
 	public String[] words(){
 		return new String[] {"kaan", "drem", "ov"};
@@ -36,7 +36,7 @@ public class KaanDremOv extends EntityListener implements Shout{
 		peaced.addAll(peaceThese, (30+20*level) * 20);
 	}
 	
-	@Override
+	@EventHandler
 	public void onEntityTarget(EntityTargetEvent event){
 		if(peaced.containsKey(event.getEntity())){
 			event.setCancelled(true);

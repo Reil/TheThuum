@@ -4,7 +4,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import com.reilaos.bukkit.TheThuum.Plugin;
-import com.reilaos.bukkit.TheThuum.Shout;
 
 /**
  * Whirlwind Sprint

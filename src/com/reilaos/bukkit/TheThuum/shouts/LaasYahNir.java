@@ -1,6 +1,5 @@
 package com.reilaos.bukkit.TheThuum.shouts;
 
-import java.util.HashSet;
 import java.util.List;
 
 import org.bukkit.Effect;
@@ -10,7 +9,6 @@ import org.bukkit.entity.Player;
 
 import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Plugin;
-import com.reilaos.bukkit.TheThuum.Shout;
 
 /**
  * Aura Whisper

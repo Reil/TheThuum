@@ -1,22 +1,21 @@
 package com.reilaos.bukkit.TheThuum.shouts;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityListener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.Effect;
-import org.bukkit.EntityEffect;
 
 import com.reilaos.bukkit.TheThuum.EffectTracker;
 import com.reilaos.bukkit.TheThuum.Plugin;
-import com.reilaos.bukkit.TheThuum.Shout;
 
 
 /**
  * Become Ethereal 
  */
-public class FeimZiiGron extends EntityListener implements Shout {
+public class FeimZiiGron implements Shout,Listener {
 	@Override
 	public String[] words(){
 		return new String[] {"feim", "zii", "gron"};
@@ -33,7 +32,7 @@ public class FeimZiiGron extends EntityListener implements Shout {
 		task.id = Plugin.scheduler.scheduleSyncRepeatingTask(Plugin.thisOne, task, 0, 10);
 	}
 	
-	@Override
+	@EventHandler
 	public void onEntityDamage(EntityDamageEvent event){
 		if(invincible.containsKey(event.getEntity())){
 			event.setCancelled(true);
@@ -43,7 +42,7 @@ public class FeimZiiGron extends EntityListener implements Shout {
 		}
 	}
 	
-	@Override
+	@EventHandler
 	public void onFoodLevelChange(FoodLevelChangeEvent event) {
 		if (!(event.getEntity() instanceof Player)) return;
 		if (invincible.containsKey(event.getEntity()) && event.getFoodLevel() < ((Player)event.getEntity()).getFoodLevel()){

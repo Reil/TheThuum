@@ -4,7 +4,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 import com.reilaos.bukkit.TheThuum.Plugin;
-import com.reilaos.bukkit.TheThuum.Shout;
 
 
 /**

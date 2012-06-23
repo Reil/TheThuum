@@ -17,7 +17,6 @@ package com.reilaos.bukkit.TheThuum;
 
 import java.util.Collection;
 import java.util.Hashtable;
-import java.util.Set;
 
 import org.bukkit.entity.Entity;
 

@@ -1,6 +1,6 @@
 
 
-package com.reilaos.bukkit.TheThuum;
+package com.reilaos.bukkit.TheThuum.shouts;
 
 import org.bukkit.entity.Player;
 
