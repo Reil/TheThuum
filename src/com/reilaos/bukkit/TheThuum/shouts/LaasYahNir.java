@@ -1,5 +1,6 @@
 package com.reilaos.bukkit.TheThuum.shouts;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.bukkit.Effect;
@@ -16,7 +17,7 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 public class LaasYahNir implements Shout {
 	@Override
 	public String[] words() {
-		return new String[] {"las", "yah", "nir"};
+		return new String[] {"laas", "yah", "nir"};
 	}
 	
 	EffectTracker glowing = new EffectTracker();
@@ -27,11 +28,11 @@ public class LaasYahNir implements Shout {
 		if (task == null){
 			task = new Glow();
 			task.id = Plugin.scheduler.scheduleSyncRepeatingTask(Plugin.thisOne, task, 0, 20);
-		}
-		List<Entity> entities = dovahkiin.getNearbyEntities(90,90,90);
-		for(Entity test : entities){
-			if (!(test instanceof LivingEntity)){
-				entities.remove(test);
+		}	
+		List<Entity> entities = new LinkedList<Entity>();
+		for(Entity test : dovahkiin.getNearbyEntities(90,90,90)){
+			if ((test instanceof LivingEntity)){
+				entities.add(test);
 			}
 		}
 		glowing.addAll(entities, 200*level);
