@@ -1,3 +1,6 @@
+display:
+    audible chat: 2
+    color: gold
 cooldown:
     universal: true
     alert message: It's been too soon since your last shout!

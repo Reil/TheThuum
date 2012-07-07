@@ -33,6 +33,16 @@ public class GreyBeard implements Listener{
 			for(power = 0; power < length; power++){
 				if(!message[power].equalsIgnoreCase(shoutType.shout.words()[power])) continue shouting;
 			}
+			switch(Plugin.thisOne.getConfig().getInt("display.audible chat")){
+			case (2):
+				event.setMessage(ChatColor.valueOf(Plugin.thisOne.getConfig().getString("display.color").toUpperCase()) + event.getMessage());
+				break;
+			case (1):
+				event.getPlayer().sendMessage(ChatColor.valueOf(Plugin.thisOne.getConfig().getString("display.color").toUpperCase()) + event.getMessage());
+			case (0):
+				event.setCancelled(true);
+			break;
+			}
 			shout(event.getPlayer(), shoutType, power);
 			return;
 		}
