@@ -11,7 +11,8 @@ public enum ShoutType{
 	KAANDREMOV    (new KaanDremOv()),
 	WULDNAHKEST   (new WuldNahKest()),
 	FEIMZIIGRON   (new FeimZiiGron()),
-	LAASYAHNIR    (new LaasYahNir());
+	LAASYAHNIR    (new LaasYahNir()),
+	HUNKAALZOOR    (new HunKaalZoor());
 	
 	public Shout shout;
 	private ShoutType(Shout shout){

@@ -1,5 +1,6 @@
 display:
     audible chat: 2
+    audible command: 2
     color: gold
 cooldown:
     universal: true
@@ -35,3 +36,7 @@ shouts:
         - 30
         - 40
         - 50
+    hunkaalzoor:
+        - 180
+        - 180
+        - 180
