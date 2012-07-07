@@ -1,0 +1,29 @@
+The Thu'um
+by: Francis Israel
+
+This is a plugin for Bukkit, a minecraft server modification. It implements the Dragon Shouts from The Elder Scrolls IV: Skyrim.
+
+--------------
+Project Setup:
+--------------
+README: The file you're reading right now.
+config.yml: The default configuration for the plugin. Includes shout cooldowns and other things.
+plugin.yml: Describes the plugin to Bukkit.
+com.reilaos.bukkit.TheThuum:
+    GreyBeard: Tracks cooldowns and player shout commands.
+    Plugin: Does setup.
+    The rest: Some classes/functions that the shouts all use.
+com.reilaos.bukkit.TheThuum.delays:
+    Runnable classes that can be used by shouts in conjunction with the bukkit scheduler to do timed/delayed effects.
+com.reilaos.bukkit.TheThuum.shouts:
+    ShoutType: An enum of all the shouts.
+    Shout: Interface class. Contains a shout function and a string array of the words comprising this shout.
+    The rest: All the shouts in this plugin.
+
+---------------------
+To future developers:
+---------------------
+To add a new shout:
+1) Create a class in the package com.reilaos.bukkit.TheThuum.shouts which implements the class com.reilaos.bukkit.TheThuum.Shout
+2) Add that class to the enum com.reilaos.bukkit.TheThuum.ShoutType
+3) Add the default cooldowns for that shout to config.yml
