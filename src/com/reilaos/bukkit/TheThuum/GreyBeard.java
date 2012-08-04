@@ -60,7 +60,8 @@ public class GreyBeard implements Listener{
 		if (message.length > 2) return;
 		shouting: for (ShoutType shoutType : ShoutType.values()){
 			int power = 1;
-			if (!message[0].equalsIgnoreCase(shoutType.shout.words()[0])) continue shouting;
+			if (!message[0].equalsIgnoreCase(shoutType.shout.words()[0]))
+				continue shouting;
 			event.setCancelled(true);
 			
 			try {

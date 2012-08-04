@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 import org.bukkit.Effect;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.SmallFireball;
@@ -26,15 +25,10 @@ public class YolToorShul implements Shout {
 	public void shout(Player dovahkiin, int level) {
 		if(level > 3 || level < 0) return;
 		
-		World world = dovahkiin.getWorld();
 		Location location = dovahkiin.getEyeLocation();
-		Location spawnFireball = location.clone().add(location.getDirection().normalize());
 		Vector trajectory = new Vector();
 		trajectory.copy(location.getDirection()).normalize();
-		
-		Class<? extends Fireball> projectile;
-		if (level == 3) projectile = SmallFireball.class;
-		else projectile = SmallFireball.class;
+		Location spawnFireball = location.clone().add(trajectory);
 		
 		// Two of the 4 cardinal directions on a plane normal to the direction the player is looking
 		LinkedList<Vector> Lateral = new LinkedList<Vector>();
@@ -68,9 +62,9 @@ public class YolToorShul implements Shout {
         // There will be many duplicate vectors.  This is okay.
 		
 		for(Vector offset : Lateral){
-			Fireball fireball = world.spawn(spawnFireball.clone().add(offset), projectile);
+			Fireball fireball = location.getWorld().spawn(spawnFireball.clone().add(offset), SmallFireball.class);
 			fireball.setVelocity(trajectory);
-			fireball.setDirection(trajectory);		
+			fireball.setDirection(trajectory);
 			fireball.setShooter(dovahkiin);
 			fireball.setIsIncendiary(true);
 			fireball.setYield((float) 0.4);
