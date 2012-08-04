@@ -13,7 +13,8 @@ public enum ShoutType{
 	FEIMZIIGRON   (new FeimZiiGron()),
 	LAASYAHNIR    (new LaasYahNir()),
 	HUNKAALZOOR   (new HunKaalZoor()),
-	KRIILUNAUS    (new KriiLunAus());
+	KRIILUNAUS    (new KriiLunAus()),
+	STRUNBAHQO    (new StrunBahQo());
 	
 	public Shout shout;
 	private ShoutType(Shout shout){
