@@ -10,9 +10,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
  * Clear Skies
  */
 public class LokVahKoor implements Shout {
+	private String[] words = {"lok", "vah", "koor", "Clear Skies", "Temporarily calms a storm."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"lok", "vah", "koor"};
+		return words;
 	}
 	
 	@Override

@@ -13,11 +13,13 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 
 
 public class StrunBahQo implements Shout {
+	private String[] words = {"strun", "bah", "qo", "Storm Call", "Summons a storm that hits things with lightning."};
+	
 	Random RNG = new Random();
 
 	@Override
 	public String[] words() {
-		return new String[] {"strun", "bah", "qo"};
+		return words;
 	}
 
 	@Override

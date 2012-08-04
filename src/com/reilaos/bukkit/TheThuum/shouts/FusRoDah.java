@@ -17,9 +17,11 @@ import com.reilaos.bukkit.TheThuum.delays.Explosion;
  * Unrelenting Force
  */
 public class FusRoDah implements Shout {
+	private String[] words = {"fus", "ro", "dah", "Unrelenting Force", "Sends mobs and items flying."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"fus", "ro", "dah"};
+		return words;
 	}
 	
 	

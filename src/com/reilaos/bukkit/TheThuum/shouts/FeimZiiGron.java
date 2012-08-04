@@ -16,9 +16,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
  * Become Ethereal 
  */
 public class FeimZiiGron implements Shout,Listener {
+	private String[] words = {"feim", "zii", "gron", "Become Ethereal", "Makes you unable to take damage."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"feim", "zii", "gron"};
+		return words;
 	}
 	
 	EffectTracker invincible = new EffectTracker();

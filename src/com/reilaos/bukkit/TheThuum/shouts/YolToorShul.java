@@ -16,9 +16,11 @@ import com.reilaos.bukkit.TheThuum.delays.RemoveEntity;
  * Fire Breath
  */
 public class YolToorShul implements Shout {
+	private String[] words = {"yol", "toor", "shul", "Fire Breath", "Sets things in front of you on fire."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"yol", "toor", "shul"};
+		return words;
 	}
 	
 	@Override

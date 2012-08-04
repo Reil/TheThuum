@@ -15,9 +15,11 @@ import com.reilaos.bukkit.TheThuum.Plugin;
  * Aura Whisper
  */
 public class LaasYahNir implements Shout {
+	private String[] words = {"laas", "yah", "nir", "Aura Whisper", "Makes nearby living creatures glow."};
+	
 	@Override
 	public String[] words() {
-		return new String[] {"laas", "yah", "nir"};
+		return words;
 	}
 	
 	EffectTracker glowing = new EffectTracker();

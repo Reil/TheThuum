@@ -17,9 +17,11 @@ import com.reilaos.bukkit.TheThuum.Shared;
  * Kyne's Peace
  */
 public class KaanDremOv implements Shout,Listener{
+	private String[] words = {"kaan", "drem", "ov", "Kyne's Peace", "Makes creatures peaceful."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"kaan", "drem", "ov"};
+		return words;
 	}
 	
 	EffectTracker peaced = new EffectTracker();

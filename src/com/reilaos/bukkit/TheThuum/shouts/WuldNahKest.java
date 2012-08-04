@@ -11,7 +11,7 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 public class WuldNahKest implements Shout{
 	@Override
 	public String[] words(){
-		return new String[] {"wuld", "nah", "kest"};
+		return new String[] {"wuld", "nah", "kest", "Whirlwind Sprint", "Rushes the dovahkiin forward."};
 	}
 	
 	static final double multiplier[] = {5.5, 5.8, 6.6};

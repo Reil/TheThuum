@@ -13,10 +13,12 @@ import com.reilaos.bukkit.TheThuum.Plugin;
 import com.reilaos.bukkit.TheThuum.delays.RemoveEntity;
 
 public class HunKaalZoor implements Shout {
-
+	
+	String[] words = {"hun", "kaal", "zoor", "Call of Valor", "Summons a hero of Sovngarde."};
+	
 	@Override
 	public String[] words(){
-		return new String[] {"hun", "kaal", "zoor"};
+		return words;
 	}
 	
 	private EntityType[] heroes = {EntityType.SNOWMAN, EntityType.WOLF, EntityType.IRON_GOLEM};
