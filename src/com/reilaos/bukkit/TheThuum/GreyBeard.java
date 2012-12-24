@@ -24,7 +24,9 @@ public class GreyBeard implements Listener{
 	// Parses chat to see if it's a shout.  Determines level of the shout.
 	// Does parsing only.  Permissions and the like are handled by shout()
 	@EventHandler
-	public void onPlayerChat(PlayerChatEvent event) {		
+	public void onPlayerChat(PlayerChatEvent event) {
+		if (event.isCancelled()) return;
+		
 		String[] message = event.getMessage().toLowerCase().replaceAll("[^A-Za-z\\s]", "").split(" ", 4);
 		int length = message.length;
 		
@@ -54,6 +56,8 @@ public class GreyBeard implements Listener{
 	
 	@EventHandler
 	public void onPlayerCommand(PlayerCommandPreprocessEvent event){
+		if (event.isCancelled()) return;
+		
 		Player dovahkiin = event.getPlayer();
 		String[] message = event.getMessage().split(" ");
 		message[0] = message[0].substring(1);
