@@ -25,6 +25,13 @@ public class Plugin extends JavaPlugin{
 		scheduler = getServer().getScheduler();
 		log = Logger.getLogger("Minecraft");
 		PluginManager pm = getServer().getPluginManager();
+
+		// Build the shout table
+		for (ShoutType shoutType : ShoutType.values()){
+			arngeir.ShoutTable.put(shoutType.shout.words()[0], shoutType.shout);
+			arngeir.ShoutTable.put(shoutType.shout.words()[0] + " " + shoutType.shout.words()[1], shoutType.shout);
+			arngeir.ShoutTable.put(shoutType.shout.words()[0] + " " + shoutType.shout.words()[1]+ " " + shoutType.shout.words()[2], shoutType.shout);			
+		}
 		
 		pm.registerEvents(arngeir,this);
 		for(ShoutType blah:ShoutType.values()){
