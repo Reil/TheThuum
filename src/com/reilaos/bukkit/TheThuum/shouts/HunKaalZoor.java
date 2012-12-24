@@ -26,7 +26,7 @@ public class HunKaalZoor implements Shout {
 	@Override
 	public void shout(Player dovahkiin, int level) {
 		Location spawnHere = dovahkiin.getLastTwoTargetBlocks(null, 30).get(0).getLocation();
-		LivingEntity hero = spawnHere.getWorld().spawnCreature(spawnHere, heroes[level-1]);
+		LivingEntity hero = (LivingEntity) spawnHere.getWorld().spawnEntity(spawnHere, heroes[level-1]);
 		if (hero instanceof Tameable)
 			((Tameable)  hero).setOwner(dovahkiin);
 		else if (hero instanceof IronGolem)
