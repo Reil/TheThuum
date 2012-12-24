@@ -34,18 +34,4 @@ public class Shared {
 		}
 		return returnMe;
 	}
-	
-	public static boolean cascadePermission(Player dovahkiin, String permission){
-		StringBuilder builder = new StringBuilder();
-		String[] segments = permission.split("\\.");
-		
-		if (dovahkiin.hasPermission("*")) return true;
-		if (dovahkiin.hasPermission(permission)) return true;
-		for(String segment: segments){
-			builder.append(segment + ".");
-			if(dovahkiin.hasPermission(builder.toString() + "*")) return true;
-		}
-		
-		return false;
-	}
 }

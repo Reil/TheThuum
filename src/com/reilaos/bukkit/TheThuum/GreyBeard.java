@@ -100,9 +100,9 @@ public class GreyBeard implements Listener{
 	public static void shout(Player dragonBorn, ShoutType word, int level){
 		if (level > 3 || level < 0) return;
 		
-		if (!Shared.cascadePermission(dragonBorn,"thuum.shout." + word.toString().toLowerCase() + "." + level)) return;
+		if (!dragonBorn.hasPermission("thuum.shout." + word.toString().toLowerCase() + "." + level)) return;
 		
-		if (!Shared.cascadePermission(dragonBorn, "thuum.ignorecooldown." + word.toString().toLowerCase() + "." + level)) {
+		if (!dragonBorn.hasPermission("thuum.ignorecooldown." + word.toString().toLowerCase() + "." + level)) {
 			if (!Plugin.thisOne.arngeir.putOnCooldown(dragonBorn, word, level)) {
 				dragonBorn.sendMessage(Plugin.thisOne.getConfig().getString("cooldown.alert message"));
 				return;
