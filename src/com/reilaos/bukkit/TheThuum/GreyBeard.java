@@ -11,6 +11,7 @@ import java.util.Set;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -27,7 +28,7 @@ public class GreyBeard implements Listener{
 	
 	// Parses chat to see if it's a shout.  Determines level of the shout.
 	// Does parsing only.  Permissions and the like are handled by GreyBeard.shout()
-	@EventHandler
+	@EventHandler (priority=EventPriority.HIGH)
 	public void onPlayerChat(PlayerChatEvent event) {
 		if (event.isCancelled()) return;
 		
@@ -53,7 +54,7 @@ public class GreyBeard implements Listener{
 		}
 	}
 	
-	@EventHandler
+	@EventHandler (priority=EventPriority.HIGH)
 	public void onPlayerCommand(PlayerCommandPreprocessEvent event){
 		if (event.isCancelled()) return;
 		
