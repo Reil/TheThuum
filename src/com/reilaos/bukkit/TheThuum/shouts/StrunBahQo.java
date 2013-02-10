@@ -58,9 +58,12 @@ public class StrunBahQo implements Shout {
 			List<Entity> zapPool = dovahkiin.getNearbyEntities(30.5, 30.5, 30.5);
 			Entity zapMe;
 			if (zapPool.size() > 0) {
+				int tries = 0;
 				do {
 					zapMe = zapPool.get(RNG.nextInt(zapPool.size()));
-				} while (!(zapMe instanceof LivingEntity));
+					tries++;
+				} while (!(zapMe instanceof LivingEntity && !zapMe.isDead()) &&
+						 tries < zapPool.size() * 2);
 				
 				zapMe.getWorld().strikeLightning(zapMe.getLocation());
 			}
