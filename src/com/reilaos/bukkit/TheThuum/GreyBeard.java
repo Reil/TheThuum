@@ -127,7 +127,8 @@ public class GreyBeard implements Listener{
 	// If not already on cooldown, puts this shout on cooldown and returns true
 	// Returns false if the player is already on cooldown.
 	public boolean putOnCooldown(Player dovahkiin, Shout shout, int level){
-		int cooldownDuration = (int) (Plugin.thisOne.getConfig().getDoubleList("shouts." + shout.toString().toLowerCase()).get(level - 1) * 20);
+		String shoutName = shout.words()[0]+shout.words()[1]+shout.words()[2];
+		int cooldownDuration = (int) (Plugin.thisOne.getConfig().getDoubleList("shouts." + shoutName).get(level - 1) * 20);
 		
 		if (Plugin.thisOne.getConfig().getBoolean("single cooldown", true)) shout = ShoutType.FUSRODAH.shout;
 		
