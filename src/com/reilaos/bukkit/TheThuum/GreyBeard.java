@@ -96,10 +96,11 @@ public class GreyBeard implements Listener{
 	// Checks permissions, cooldown, performs shout if this checks out.
 	public static void shout(Player dragonBorn, Shout word, int level){
 		if (level > 3 || level < 0) return;
+		String shoutName = word.words()[0]+word.words()[1]+word.words()[2];
 		
-		if (!dragonBorn.hasPermission("thuum.shout." + word.words()[0]+word.words()[1]+word.words()[2] + "." + level)) return;
+		if (!dragonBorn.hasPermission("thuum.shout." + shoutName + "." + level)) return;
 		
-		if (!dragonBorn.hasPermission("thuum.ignorecooldown." + word.toString().toLowerCase() + "." + level)) {
+		if (!dragonBorn.hasPermission("thuum.ignorecooldown." + shoutName + "." + level)) {
 			if (!Plugin.thisOne.arngeir.putOnCooldown(dragonBorn, word, level)) {
 				dragonBorn.sendMessage(Plugin.thisOne.getConfig().getString("cooldown.alert message"));
 				return;
